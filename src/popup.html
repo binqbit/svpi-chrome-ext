@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Vault Personal Information</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <img
+      id="logo"
+      src="logo.png"
+      alt="Secure Vault Logo"
+      width="100px"
+      height="100px"
+    />
+    <h1>Secure Vault</h1>
+    <div id="message"></div>
+    <select id="segment-select" style="display: none">
+      <option value="">Select data</option>
+    </select>
+    <div id="password-section" style="display: none">
+      <label>
+        <input type="checkbox" id="use-root-password" checked /> Use root
+        password </label
+      ><br />
+      <input type="password" id="password" placeholder="Enter password" />
+    </div>
+    <button id="submit-btn">Submit</button>
+
+    <script src="axios.min.js"></script>
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
