@@ -1,7 +1,7 @@
 # SVPI Chrome Extension
 
 ### Description
-This is a Chrome Extension that allows you to use the [SVPI](https://github.com/binqbit/svpi) chrome app [API](https://github.com/binqbit/svpi/api/api.md) to autofill passwords on websites.
+This is a Chrome Extension that allows you to use the [SVPI](https://github.com/binqbit/svpi) chrome app [API](https://github.com/binqbit/svpi/blob/main/api/api.md) to autofill passwords on websites.
 
 ### Installation
 1. Open Chrome Extensions: `chrome://extensions/`
