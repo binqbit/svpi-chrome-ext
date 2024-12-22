@@ -31,6 +31,15 @@ function isPasswordInput(element) {
     return false;
 }
 
+function enterPassword(password) {
+    if (selectedInput) {
+        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+        nativeInputValueSetter.call(selectedInput, password);
+        const event = new Event('input', { bubbles: true });
+        selectedInput.dispatchEvent(event);
+    }
+}
+
 document.addEventListener('click', (event)  =>{
     clickCount ++;
 
@@ -52,8 +61,6 @@ document.addEventListener('click', (event)  =>{
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "insertPassword") {
-        if (selectedInput) {
-            selectedInput.value = request.password;
-        }
+        enterPassword(request.password);
     }
 });
