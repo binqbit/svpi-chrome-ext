@@ -12,7 +12,7 @@ This is a Chrome Extension that allows you to use the [SVPI](https://github.com/
 6. Done!
 
 ### Usage
-1. Duble Click on the Input Field
+1. Duble Click on the Password Input Field
 2. Select the Password
 3. Write the Password
 4. Submit
