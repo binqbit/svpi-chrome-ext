@@ -5,7 +5,9 @@
     "description": "Secure Vault Personal Information",
     "permissions": [
         "activeTab",
-        "scripting"
+        "scripting",
+        "background",
+        "nativeMessaging"
     ],
     "action": {
         "default_popup": "src/popup.html",
@@ -28,8 +30,5 @@
                 "scripts/content.js"
             ]
         }
-    ],
-    "content_security_policy": {
-        "extension_pages": "script-src 'self'; object-src 'self'; connect-src http://localhost:3333"
-    }
+    ]
 }

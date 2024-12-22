@@ -1,17 +1,17 @@
+const clickDelay = 300;
 let clickCount = 0;
 let clickTimer = null;
-let input = null;
-const clickDelay = 300;
+let selectedInput = null;
 
-function handleClick(event) {
-    clickCount++;
+document.addEventListener('click', (event)  =>{
+    clickCount ++;
 
     if (clickCount === 1) {
         clickTimer = setTimeout(() => {
             if (clickCount === 2) {
                 const selectedElement = event.target;
                 if (selectedElement.tagName === 'INPUT') {
-                    input = selectedElement;
+                    selectedInput = selectedElement;
                     chrome.runtime.sendMessage({ action: "doubleClickInput" });
                 }
             }
@@ -20,14 +20,12 @@ function handleClick(event) {
     }
 
     event.stopPropagation();
-}
-
-document.addEventListener('click', handleClick);
+});
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "insertPassword") {
-        if (input) {
-            input.value = request.password;
+        if (selectedInput) {
+            selectedInput.value = request.password;
         }
     }
 });

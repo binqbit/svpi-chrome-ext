@@ -1,0 +1,9 @@
+﻿{
+    "name": "com.binqbit.svpi_chrome_app",
+    "description": "SVPI Chrome App",
+    "path": "app.bat",
+    "type": "stdio",
+    "allowed_origins": [
+        "chrome-extension://eidgkhbgphaopoabohbnjckbohfnfmeb/"
+    ]
+}
